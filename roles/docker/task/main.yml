@@ -1,0 +1,20 @@
+---
+ - name: installation de docker
+   raw: yum install -y yum-utils device-mapper-persistent-data lvm2
+
+ - name: osef
+   raw: yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+
+ - name: osef2
+   raw: yum install -y docker-ce docker-ce-cli containerd.io
+ - name: osef8
+   raw: yum install -y docker-ce-cli
+ - name: osef9
+   raw: yum install -y containerd.io
+ - name: osef3
+   raw: systemctl start docker
+ - name: insallation de docker-compose
+   raw: curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -$
+
+ - name: osef4
+   raw: chmod +x /usr/local/bin/docker-compose

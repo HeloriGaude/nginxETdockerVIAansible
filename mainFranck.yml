@@ -54,6 +54,18 @@
         yum:
           name: python-pip
           state: present
+          
+      - name: "install docker-py"
+        pip:
+          name=docker-py
+
+      - name: "create an nginx container"
+        docker_container:
+          name: nginx-server
+          image: "nginx:latest"
+          state: started
+          published_ports:
+           - 80:80 
 
 
 

@@ -1,0 +1,5 @@
+---
+ - name: update
+   raw: sudo yum -y update
+ - name: upgrade all packages
+   raw: sudo yum upgrade

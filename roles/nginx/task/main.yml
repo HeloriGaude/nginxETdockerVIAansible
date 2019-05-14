@@ -1,0 +1,25 @@
+---
+ - name: depo
+   raw: yum install -y epel-release
+ - name: Installation
+   raw: yum install -y python-pip
+ - name: tamere en short
+   raw: pip install docker-py
+ - name: Log into DockerHub
+   docker_login:
+     email: 'helori.gaude@gmail.com'
+     username: 'helori'
+     password: 'Ison-uniK1'
+
+ - name: application container
+   docker_image:
+     name: nginx
+     tag: latest
+     state: present
+
+ - name: Running the container
+   docker_container:
+        name: nginx
+        image: nginx:latest
+        state: started
+        published_ports: 80:80
